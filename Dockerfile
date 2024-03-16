@@ -56,6 +56,6 @@ RUN make -j4 -C $(basename -s .tar.gz $VRUI) INSTALLDIR=$INSTALLDIR install
 RUN make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1 VRUI_MAKEDIR=$INSTALLDIR/share/Vrui-8.0/make all
 RUN make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1 VRUI_MAKEDIR=$INSTALLDIR/share/Vrui-8.0/make install
 
-RUN make -j4 -C $(basename -s .tar.gz $SARND) VRUI_MAKEDIR=$INSTALLDIR/share/Vrui-8.0/make all
+RUN make -j4 -C $(basename -s .tar.gz $SARND) VRUI_MAKEDIR=$INSTALLDIR/share/Vrui-8.0/make INSTALLDIR=$INSTALLDIR all
 RUN make -j4 -C $(basename -s .tar.gz $SARND) VRUI_MAKEDIR=$INSTALLDIR/share/Vrui-8.0/make INSTALLDIR=$INSTALLDIR install
 

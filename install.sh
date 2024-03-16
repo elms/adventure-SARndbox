@@ -39,9 +39,14 @@ tar xzf $SARND
 
 $(cd $(basename -s.tar.gz $VRUI)  && patch -p2 < ../Vrui-0001.patch)
 
-make -j4 -C $(basename -s .tar.gz $VRUI) INSTALLDIR=/opt/vrui all
-make -j4 -C $(basename -s .tar.gz $VRUI) INSTALLDIR=/opt/vrui install
-make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1  VRUI_MAKEDIR=/opt/vrui/share/Vrui-8.0/make all
-make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1  VRUI_MAKEDIR=/opt/vrui/share/Vrui-8.0/make install
-make -j4 -C $(basename -s .tar.gz $SARND)  VRUI_MAKEDIR=/opt/vrui/share/Vrui-8.0/make all
-make -j4 -C $(basename -s .tar.gz $SARND)  VRUI_MAKEDIR=/opt/vrui/share/Vrui-8.0/make install
+export INSTALLDIR=/opt/vrui
+export VRUI_MAKEDIR=/opt/vrui/share/Vrui-8.0/make
+
+# VRUI, KINECT, and SARndbox makefile install dependencies don't
+# appear to work in parallel builds with all
+make -j4 -C $(basename -s .tar.gz $VRUI) all
+make -j4 -C $(basename -s .tar.gz $VRUI)  install
+make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1 all
+make -j4 -C $(basename -s .tar.gz $KINECT) KINECT_PROJECTORTYPE=1 install
+make -j4 -C $(basename -s .tar.gz $SARND) all
+make -j4 -C $(basename -s .tar.gz $SARND) install
