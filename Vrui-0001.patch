@@ -1,0 +1,10 @@
+--- a/Vrui-8.0-002/Vrui/Vislets/FrameRateViewer.h	2019-07-17 20:48:41.000000000 +0000
++++ b/Vrui-8.0-002/Vrui/Vislets/FrameRateViewer.h	2019-07-17 20:48:41.000000000 +0000
+@@ -26,6 +26,7 @@
+ 
+ #include <GL/GLNumberRenderer.h>
+ #include <Vrui/Vislet.h>
++#include <cstddef>
+ 
+ namespace Vrui {
+ 

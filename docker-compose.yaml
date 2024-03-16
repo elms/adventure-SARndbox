@@ -1,0 +1,9 @@
+version "3.9"
+
+services:
+  base:
+    image: SARndbox:main
+    build:
+      context: .
+      target: SARndbox
+      
