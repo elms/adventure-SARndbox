@@ -1,0 +1,10 @@
+[Unit]
+Description="Adventure! specific SARndbox service"
+
+[Service]
+ExecStart=/opt/vrui/bin/SARndbox
+Restart=always
+User=adventure
+
+[Install]
+WantedBy=multi-user.target
