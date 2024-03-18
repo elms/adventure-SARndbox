@@ -2,9 +2,9 @@
 Description="Adventure! specific SARndbox service"
 
 [Service]
-ExecStart=/opt/vrui/bin/SARndbox
+ExecStart=/home/adventure/adventure-SARndbox/bin/SARndbox -uhm -rs 2 -ncl -uhs -ws 5 10 -wo 1 -us -nas 10 -VruiVerbose
 Restart=always
-User=adventure
 
 [Install]
-WantedBy=multi-user.target
+#WantedBy=graphical.target
+WantedBy=default.target

@@ -1,0 +1,11 @@
+--- Vrui.cfg.orig	2024-03-18 11:30:28.990128043 -0700
++++ Vrui.cfg	2024-03-18 11:30:15.753636949 -0700
+@@ -136,7 +136,7 @@
+ 			
+ 			decorate true
+ 			bypassCompositor true
+-			windowFullscreen false
++			windowFullscreen true
+ 			vsync true
+ 			
+ 			# Uncomment one of the following lines to select the window's
