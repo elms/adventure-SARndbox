@@ -1,10 +1,16 @@
 [Unit]
 Description="Adventure! specific SARndbox service"
+StartLimitBurst=10
+StartLimitIntervalSec=10s
 
 [Service]
-ExecStart=/home/adventure/adventure-SARndbox/bin/SARndbox -uhm -rs 2 -ncl -uhs -ws 5 10 -wo 1 -us -nas 10 -VruiVerbose
+# hacky way....use timer instead
+#ExecStartPre=sleep 10
+ExecStart=/home/adventure/adventure-SARndbox/bin/SARndbox -uhm -rs 2 -ncl -uhs -ws 5 10 -wo 1 -us -nas 10 -VruiVerbose -loadInputGraph /home/adventure/adventure-SARndbox/Adventure.inputgraph
 Restart=always
+TimeoutSec=20
 
-[Install]
+#[Install]
 #WantedBy=graphical.target
-WantedBy=default.target
+#WantedBy=default.target
+#WantedBy=wm.target

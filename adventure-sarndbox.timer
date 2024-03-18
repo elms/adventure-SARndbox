@@ -1,0 +1,11 @@
+[Unit]
+Description="Timer for Adventure SARndbox service"
+
+[Timer]
+OnBootSec=60s
+#OnUnitActiveSec=24h
+Unit=adventure-sarndbox.service
+
+[Install]
+WantedBy=default.target
+

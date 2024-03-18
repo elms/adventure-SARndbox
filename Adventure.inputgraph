@@ -1,0 +1,7 @@
+section InputGraph
+	section Tool0
+		toolClass GlobalWaterTool
+		bindings ((Mouse, w, r))
+	endsection
+
+endsection
